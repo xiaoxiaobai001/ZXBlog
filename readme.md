@@ -2,25 +2,22 @@
 
 目前还不完善，正在不断更新。
 
-## Java基础
-
-[Java基础](Java基础/)
-
-* [JVM](Java基础/JVM)
-* [异常](https://github.com/ZXZxin/ZXBlog/blob/master/Java%E5%9F%BA%E7%A1%80/%E5%BC%82%E5%B8%B8/Java%E5%BC%82%E5%B8%B8%E5%B0%8F%E6%80%BB%E7%BB%93.md)
-* [泛型](https://github.com/ZXZxin/ZXBlog/blob/master/Java%E5%9F%BA%E7%A1%80/%E6%B3%9B%E5%9E%8B/%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93.md)
-* [反射](https://github.com/ZXZxin/ZXBlog/blob/master/Java%E5%9F%BA%E7%A1%80/%E5%8F%8D%E5%B0%84/%E5%8F%8D%E5%B0%84%E5%9F%BA%E7%A1%80.md)
-* [多线程并发](https://github.com/ZXZxin/ZXBlog/blob/master/%E5%B9%B6%E5%8F%91/%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E5%A4%9A%E7%BA%BF(%E4%BA%8C).md)
-
 ## 刷题
 
 [刷题](刷题/)
 
-* Codeforces目前写了70道左右；
-* LeetCode目前写了150道左右(大部分题目有详细解释和图片)；
-* 其他OJ累计100道写了左右；
+**下面的三个专栏得到了大部分人的点赞，推荐给大家**
 
-这里推荐我的[**剑指Offer题解**](刷题/Other/剑指Offer/)，大部分题目配图，且用多种方法实现。
+* [**30个笔试面试模板题**](刷题/InterviewAlgorithm.md)
+* [**图解LeetCode**](刷题/LeetCode/LeetCodeSolutionIndex.md)
+* [**图解剑指Offer**](刷题/Other/剑指Offer/)
+
+累计: `Codeforces`80道左右，`LeetCode`200道左右，其他`OJ`100道+。
+
+> 之前在牛客网发的两篇帖子，算是给自己项目做了一个推广 ^_^
+>
+> * https://www.nowcoder.com/discuss/171791
+> * https://www.nowcoder.com/discuss/177397
 
 ## 数据结构与算法
 
@@ -50,6 +47,8 @@
 
 ## 设计模式
 
+比较简单易懂的总结。
+
 [设计模式](杂项/设计模式/)
 
 * [动态代理1](https://github.com/ZXZxin/ZXBlog/blob/master/%E6%9D%82%E9%A1%B9/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/11%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F(%E4%B8%80).md)
@@ -65,6 +64,17 @@
 * [简单工厂](https://github.com/ZXZxin/ZXBlog/blob/master/%E6%9D%82%E9%A1%B9/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/04%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md)
 * [工厂方法](https://github.com/ZXZxin/ZXBlog/blob/master/%E6%9D%82%E9%A1%B9/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/05%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.md)
 * [抽象工厂](https://github.com/ZXZxin/ZXBlog/blob/master/%E6%9D%82%E9%A1%B9/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/06%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md)
+
+## Java基础
+
+[Java基础](Java基础/)
+
+* [JVM](Java基础/JVM)
+* [异常](https://github.com/ZXZxin/ZXBlog/blob/master/Java%E5%9F%BA%E7%A1%80/%E5%BC%82%E5%B8%B8/Java%E5%BC%82%E5%B8%B8%E5%B0%8F%E6%80%BB%E7%BB%93.md)
+* [泛型](https://github.com/ZXZxin/ZXBlog/blob/master/Java%E5%9F%BA%E7%A1%80/%E6%B3%9B%E5%9E%8B/%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93.md)
+* [反射](https://github.com/ZXZxin/ZXBlog/blob/master/Java%E5%9F%BA%E7%A1%80/%E5%8F%8D%E5%B0%84/%E5%8F%8D%E5%B0%84%E5%9F%BA%E7%A1%80.md)
+* [多线程并发](https://github.com/ZXZxin/ZXBlog/blob/master/%E5%B9%B6%E5%8F%91/%E5%A4%9A%E7%BA%BF%E7%A8%8B/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B(%E4%BA%8C).md)
+
 
 ## MYSQL
 

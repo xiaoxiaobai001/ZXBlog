@@ -12,6 +12,8 @@ MySQL复制过程分成三步：
 
 ![zhucong_1.png](images/zhucong_1.png)
 
+![1557017250485](assets/1557017250485.png)
+
 Mysql的复制（replication）是一个**异步的复制**。
 
 实现整个复制操作主要由三个进程完成的，其中两个进程在Slave（Sql进程和IO进程），另外一个进程在 Master（IO进程）上。 
@@ -39,8 +41,6 @@ Mysql的复制（replication）是一个**异步的复制**。
 ## 二、一主一从相关配置
 
 演示主机为`Windows` (配置文件为`my.ini`文件)，从机为`Linux`（配置文件为`my.cnf`）
-
-
 
 ### 1、主机配置(windows的my.ini)
 
@@ -116,8 +116,9 @@ MASTER_LOG_FILE='mysqlbin.具体数字',MASTER_LOG_POS=具体值;
 ![zhucong_5.png](images/zhucong_5.png)
 
 <div align="center"><img src="images/zhucong_6.png"><div><br>
-
 ### 7、主机键表，看从机有没有
+
+
 
 ### 8、如何停止主从服务复制功能
 

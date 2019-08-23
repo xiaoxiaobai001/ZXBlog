@@ -18,7 +18,7 @@
 
 >  仓库会不断更新和完善新的笔试面试中出现的模板^_^。
 >
->  如果star比较多的话，我会在近日内出C++版本哦^_^。
+>  由于这段时间非常忙，C++版本没有跟上，有兴趣的可以先看我之前写的[ACMC++模板](https://blog.csdn.net/zxzxzx0119/article/details/79838261)，后面有时间我会补上^_^。
 
 ## 目录
 
@@ -3149,10 +3149,11 @@ public class M28_ApproximateNumberEnum {
     static ArrayList<Integer> divisor(int n) {
         ArrayList<Integer> res = new ArrayList<>();
         for (int i = 1; i * i <= n; i++) {
-            if (n % i == 0)
+            if (n % i == 0) {
                 res.add(i);
-            if (i != n / i)
-                res.add(n / i);
+                if (i != n / i)
+                    res.add(n / i);
+            }
         }
         return res;
     }

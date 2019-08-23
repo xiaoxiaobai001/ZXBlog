@@ -1,4 +1,4 @@
-# <font color = red>MySQL基础
+# MySQL基础
  - [一、数据库的基本操作](#一数据库的基本操作)
     - [1、基本命令](#1基本命令)
     - [2、数据库储存引擎](#2数据库储存引擎)
@@ -20,11 +20,8 @@
       - [6、加/解密函数](#6加解密函数)
       - [7、其他函数](#7其他函数)
       - [8、综合案列-Mysql函数的使用](#8综合案列-mysql函数的使用)
- - 查询数据
- - 插入、更新与删除数据
- - 索引
 ***
-## <font color = red>一、数据库的基本操作
+## 一、数据库的基本操作
 ### 1、基本命令
 **登陆数据库命令:**
 ```mysql
@@ -131,7 +128,7 @@ MEMORY 存储引擎**将表中的数据存储到内存中，为查询和引用�
 
 ***
 
-## <font color = red>二、数据表的基本操作
+## 二、数据表的基本操作
 
 ### 1、创建数据表
 
@@ -475,7 +472,7 @@ alter table employees rename employees_info;
 ```
 ***
 
-## <font color = red>三、数据类型和运算符
+## 三、数据类型和运算符
 
 ### 1、MYSQL数据类型介绍
 
@@ -840,7 +837,7 @@ LEAST(值 1,值 2…,值m)
 
 **GREATEST**
 
-语法格式：`GREATEST(值1, 值2, 值3)` ，其中`n`表示参数列表中有`n`个值。当有`2`个或多个参数时，返回为最大值，假如任意一个自变量为NULL，则`GREATEST()`的返回值为NULL。\
+语法格式：`GREATEST(值1, 值2, 值3)` ，其中`n`表示参数列表中有`n`个值。当有`2`个或多个参数时，返回为最大值，假如任意一个自变量为NULL，则`GREATEST()`的返回值为NULL。
 
 **LIKE**
 
@@ -891,7 +888,7 @@ select price,price<<2,price>>2 from tmp15;
 ```
 
 ***
-## <font color = red>四、Mysql函数
+## 四、Mysql函数
 
 ### 1、数学函数
 
@@ -1298,13 +1295,15 @@ mysql> select addtime('2000-12-31 23:59:59','1:1:1') as coll,
 ```
 注意日期的一些区别:
 
-![这里写图片描述](https://img-blog.csdn.net/20180414174815850?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4enh6eDAxMTk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![1563756502079](assets/1563756502079.png)
 
 日期和时间格式化的函数
 
-![这里写图片描述](https://img-blog.csdn.net/2018041417493265?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4enh6eDAxMTk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-![这里写图片描述](https://img-blog.csdn.net/20180414174940784?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4enh6eDAxMTk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-![这里写图片描述](https://img-blog.csdn.net/20180414174950614?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p4enh6eDAxMTk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![1563756518657](assets/1563756518657.png)
+
+![1563756595193](assets/1563756595193.png)
+
+![1563756606926](assets/1563756606926.png)
 
 #### 8)、时间日期格式化函数
 

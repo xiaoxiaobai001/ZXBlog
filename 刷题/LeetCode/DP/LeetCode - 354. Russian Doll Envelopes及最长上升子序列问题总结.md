@@ -1,19 +1,20 @@
 ﻿## LeetCode - 354. Russian Doll Envelopes及最长上升子序列问题总结
 
- - 最长上升子序列普通dp法
- - 最长上升子序列解的打印
- - 最长上升子序列NlogN法
- - LeetCode - 354. Russian Doll Envelopes
+ - [最长上升子序列普通dp法](#最长上升子序列普通dp法)
+ - [最长上升子序列解的打印](#最长上升子序列解的打印)
+ - [最长上升子序列NlogN法](#最长上升子序列nlogn法)
+ - [LeetCode - 354. Russian Doll Envelopes](#leetcode---354-russian-doll-envelopes)
 
 ***
 [**LeetCode300 测试最长上升子序列**](https://leetcode.com/problems/longest-increasing-subsequence/)
 
 ### 最长上升子序列普通dp法
-> 生成长度为`N`的数组`dp`，`dp[i]`表示的是<font color = red>在以`arr[i]`这个数结尾的情况下，`arr[0...i]`中的最长递增子序列长度</font>。
+> 生成长度为`N`的数组`dp`，`dp[i]`表示的是在以`arr[i]`这个数结尾的情况下，`arr[0...i]`中的最长递增子序列长度。
 > 
  - 对第一个数`arr[0]`来说，`dp[0] = 1`，最长递增子序列就是自己。
- - 当计算到`dp[i]`的时候，最长递增子序列要以`arr[i]`结尾，所以我们在`arr[0....i-1]`中所有比`arr[i]`小的数可以作为最长递增子序列的倒数第二个数，这些数中，哪个的最长递增子序列更大，就选择哪个。即<font color = red>dp[i] = max(dp[j] + 1) ，0 <= j < i，arr[j] < arr[i]</font>；
-	
+ - 当计算到`dp[i]`的时候，最长递增子序列要以`arr[i]`结尾，所以我们在`arr[0....i-1]`中所有比`arr[i]`小的数可以作为最长递增子序列的倒数第二个数，这些数中，哪个的最长递增子序列更大，就选择哪个。即`dp[i] = max(dp[j] + 1) ，0 <= j < i，arr[j] < arr[i]`；
+代码:
+
 ```java
  /**
  * dp[i]表示以arr[0]结尾的情况下,arr[0...i]中的最大递增子序列
@@ -106,8 +107,10 @@ class Solution {
 >根据上面的方法可以求得`dp`数组，我们根据`dp`数组就可以得到最长上升子序列的解。
 >
  - 从`dp`数组中的最大值`dp[maxi]`表示的是以`arr[maxi]`结尾的，而且是最长的上升子序列；
- - 我们从`maxi`往前面找，如果前面的某个`dp[i]`，<font color = red>**满足arr[i] < arr[maxi] 且dp[maxi] = dp[i] + 1**</font>，就说明这个是我们找最长递增子序列时候取的值，可以作为最长递增子序列的倒数第二个数。
+ - 我们从`maxi`往前面找，如果前面的某个`dp[i]`，**满足arr[i] < arr[maxi] 且dp[maxi] = dp[i] + 1**，就说明这个是我们找最长递增子序列时候取的值，可以作为最长递增子序列的倒数第二个数。
  - 然后依次往前找，可以得到解。
+
+代码:
 
 ```java
     public static int[] getLis(int[] arr,int[] dp){
@@ -199,16 +202,27 @@ class Solution {
 
  #### 题目
 
-![](images/354_t.png)
+![img.png](images/354_t.png)
 
 ### 解析
- 求解过程：先按`a`从小到大进行排序，当`a`相同时，按`b`从大到小排序。然后求解`b`的最长递增子序列。
-> 为什么b要按从大到小排列呢？按照最长递增子序列的`O(N*logN)`方法，当前数arr[i]大于ends数组中所有的数(末尾的最大)，我们会将arr[i]添加在ends数组中；否则在ends数组中二分查找第一个大于当前数的数且替换它。所以我们的做法<font color = red>会保证在a相等的情况下，b可以有一个最小值，这样可以摞相对多的数。以达更长的序列，同时也避免了a相同b不相同时摞在一起的情况</font>。
+ 求解过程：先按`a`从小到大进行排序，当`a`相同时，按`b`从大到小排序。然后求解`b` (第二维(宽))的最长递增子序列。(一维是长度，二维是宽度)
+
+*  排序后等于把在二维(长、宽)上的最长递增子序列问题转换成一维(宽)上的最长递增子序列的查找，因为对于
+   长度来说已经满足递增, 只需要在宽度上也递增即为递增序列；
+* 同长时按宽度降序排列的原因是避免同长时宽度小的也被列入递增序列中, 例如`[3,3], [3,4]`，如果宽度也按升序来排列， `[3,3]`和`[3,4]`会形成递增序列，而实际上不行；
+
+图: 
+
+![1554952364205](assets/1554952364205.png)
+
+代码:
 
 ```java
+import java.util.Arrays;
+
 class Solution {
-    
-    private class Node{
+
+    private class Node implements Comparable<Node> {
         public int a;
         public int b;
 
@@ -216,48 +230,51 @@ class Solution {
             this.a = a;
             this.b = b;
         }
-    }
 
-    public class NodeComparator implements Comparator<Node>{
-
+        /**
+         *
+         排序后等于把在二维(长、宽)
+         上的最长递增子序列问题转换成一维(宽)上的最长递增子序列的查找, 因为对于
+         长度来说已经满足递增, 只需要在宽度上也递增即为递增序列。
+         同长时按宽度降序排列的原因是
+         避免同长时宽度小的也被列入递增序列中, 例如[3,3], [3,4]
+         如果宽度也按升序来排列, [3,3]和[3,4]会形成递增序列, 而实际上不行
+         */
         @Override
-        public int compare(Node o1, Node o2) {
-            if(o1.a == o2.a){
-                return o2.b - o1.b;
-            }else {
-                return o1.a - o2.a;
-            }
+        public int compareTo(Node o) {
+            if (o.a == a)
+                return o.b - b;
+            return a - o.a;
+
         }
     }
-    
+
     public int maxEnvelopes(int[][] envelopes) {
-        if(envelopes == null || envelopes.length == 0 || envelopes[0].length == 0)
+        if (envelopes == null || envelopes.length == 0 || envelopes[0].length == 0)
             return 0;
         Node[] nodes = new Node[envelopes.length];
-        for(int i = 0; i < envelopes.length; i++){
-            nodes[i] = new Node(envelopes[i][0],envelopes[i][1]);
-        }
-        Arrays.sort(nodes,0,nodes.length,new NodeComparator());
-        int[] ends = new int[envelopes.length+1];
+        for (int i = 0; i < envelopes.length; i++)
+            nodes[i] = new Node(envelopes[i][0], envelopes[i][1]);
+        Arrays.sort(nodes);
+        int[] ends = new int[envelopes.length + 1];
         ends[1] = nodes[0].b;
         int right = 1;
         int l, m, r;
-        int res = 1;
-        for(int i = 1; i < nodes.length; i++){
+        for (int i = 1; i < nodes.length; i++) {
             l = 1;
             r = right;
-            while(l <= r){
-                m = l + (r-l)/2;
-                if(ends[m] >= nodes[i].b){
+            while (l <= r) {
+                m = l + (r - l) / 2;
+                if (ends[m] >= nodes[i].b) {
                     r = m - 1;
-                }else {
+                } else {
                     l = m + 1;
                 }
             }
-            if(l > right){
-                ends[right+1] = nodes[i].b;
+            if (l > right) {
+                ends[right + 1] = nodes[i].b;
                 right += 1;
-            }else {
+            } else {
                 ends[l] = nodes[i].b;
             }
         }
